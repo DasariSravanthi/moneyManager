@@ -1,0 +1,28 @@
+/* Write your CSS here */
+.line {
+  width: 100%;
+  border: 1px solid #d7dfe9;
+}
+
+.history-item-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-content {
+  min-width: 25%;
+  font-family: 'Roboto';
+  color: #7e858e;
+  font-size: 21px;
+  margin-right: 40px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: 0px;
+  padding: 0px;
+  cursor: pointer;
+  outline: none;
+}
