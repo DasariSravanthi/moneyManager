@@ -21,7 +21,7 @@ const transactionTypeOptions = [
 class MoneyManager extends Component {
   state = {
     title: '',
-    amount: '',
+    amount: 0,
     activeTypeId: transactionTypeOptions[0].optionId,
     transactionList: [],
     totalBalance: 0,
@@ -41,7 +41,9 @@ class MoneyManager extends Component {
     this.setState({activeTypeId: event.target.value})
   }
 
-  addTransaction = () => {
+  addTransaction = event => {
+    event.preventDefault()
+
     const {title, amount, activeTypeId} = this.state
 
     const transactionType = transactionTypeOptions.find(
@@ -57,22 +59,25 @@ class MoneyManager extends Component {
       type,
     }
 
-    console.log(newTransaction)
+    let income = 0
+    let expenses = 0
 
-    /* let income
-    let expenses
-
-    if (transactionType.displayText === 'Income') {
+    if (type === 'Income') {
       income = amount
     } else {
       expenses = amount
-    } */
+    }
+
+    console.log(income, expenses, income)
 
     this.setState(prevState => ({
       transactionList: [...prevState.transactionList, newTransaction],
       title: '',
-      amount: '',
+      amount: 0,
       activeTypeId: transactionTypeOptions[0].optionId,
+      totalBalance: prevState.totalBalance + (income - expenses),
+      totalIncome: prevState.totalIncome + income,
+      totalExpenses: prevState.totalExpenses + expenses,
     }))
   }
 
@@ -87,7 +92,8 @@ class MoneyManager extends Component {
       totalExpenses,
     } = this.state
     const amountDetails = {totalBalance, totalIncome, totalExpenses}
-    console.log(transactionList)
+
+    console.log(amountDetails)
 
     return (
       <div className="background">
