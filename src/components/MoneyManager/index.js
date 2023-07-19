@@ -113,7 +113,7 @@ class MoneyManager extends Component {
                 TITLE
               </label>
               <input
-                type="input"
+                type="text"
                 placeholder="TITLE"
                 id="title"
                 value={title}
@@ -124,7 +124,7 @@ class MoneyManager extends Component {
                 AMOUNT
               </label>
               <input
-                type="input"
+                type="text"
                 placeholder="AMOUNT"
                 id="amount"
                 value={amount}
