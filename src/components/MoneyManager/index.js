@@ -24,9 +24,9 @@ class MoneyManager extends Component {
     amount: '',
     activeTypeId: transactionTypeOptions[0].optionId,
     transactionList: [],
-    totalBalance: 0,
-    totalIncome: 0,
-    totalExpenses: 0,
+    totalBalance: '',
+    totalIncome: '',
+    totalExpenses: '',
   }
 
   givenTitle = event => {
