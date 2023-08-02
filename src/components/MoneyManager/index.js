@@ -21,7 +21,7 @@ const transactionTypeOptions = [
 class MoneyManager extends Component {
   state = {
     title: '',
-    amount: 0,
+    amount: '',
     activeTypeId: transactionTypeOptions[0].optionId,
     transactionList: [],
     totalBalance: 0,
@@ -73,7 +73,7 @@ class MoneyManager extends Component {
     this.setState(prevState => ({
       transactionList: [...prevState.transactionList, newTransaction],
       title: '',
-      amount: 0,
+      amount: '',
       activeTypeId: transactionTypeOptions[0].optionId,
       totalBalance: prevState.totalBalance + (income - expenses),
       totalIncome: prevState.totalIncome + income,
